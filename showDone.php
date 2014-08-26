@@ -51,8 +51,7 @@
 					//echo "已有记录";
 					$result = mysql_query("SELECT * FROM count where name=" . "$name") or die(mysql_error());
 					$row = mysql_fetch_array($result);
-					$rand_number = rand(1, 10);
-					$new_number = $row['mycount'] + $rand_number;
+					$new_number = $row['mycount'] + 1;
 					mysql_query("UPDATE count SET mycount = " . $new_number . " WHERE name = " . $row['name']);
 				}
 			}
